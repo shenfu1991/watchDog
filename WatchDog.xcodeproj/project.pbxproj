@@ -11,6 +11,8 @@
 		8425DB5328FCEB01009ACC8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425DB5228FCEB01009ACC8D /* ViewController.swift */; };
 		8425DB5528FCEB03009ACC8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8425DB5428FCEB03009ACC8D /* Assets.xcassets */; };
 		8425DB5828FCEB03009ACC8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8425DB5628FCEB03009ACC8D /* Main.storyboard */; };
+		8425DB6028FCFD8A009ACC8D /* NetwokingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425DB5F28FCFD8A009ACC8D /* NetwokingManager.swift */; };
+		8425DB6328FD01CD009ACC8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8425DB6228FD01CD009ACC8D /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		8425DB5428FCEB03009ACC8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8425DB5728FCEB03009ACC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8425DB5928FCEB03009ACC8D /* WatchDog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchDog.entitlements; sourceTree = "<group>"; };
+		8425DB5F28FCFD8A009ACC8D /* NetwokingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetwokingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8425DB6328FD01CD009ACC8D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 			children = (
 				8425DB5028FCEB01009ACC8D /* AppDelegate.swift */,
 				8425DB5228FCEB01009ACC8D /* ViewController.swift */,
+				8425DB5F28FCFD8A009ACC8D /* NetwokingManager.swift */,
 				8425DB5428FCEB03009ACC8D /* Assets.xcassets */,
 				8425DB5628FCEB03009ACC8D /* Main.storyboard */,
 				8425DB5928FCEB03009ACC8D /* WatchDog.entitlements */,
@@ -77,6 +82,9 @@
 			dependencies = (
 			);
 			name = WatchDog;
+			packageProductDependencies = (
+				8425DB6228FD01CD009ACC8D /* Alamofire */,
+			);
 			productName = WatchDog;
 			productReference = 8425DB4D28FCEB01009ACC8D /* WatchDog.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +113,9 @@
 				Base,
 			);
 			mainGroup = 8425DB4428FCEB01009ACC8D;
+			packageReferences = (
+				8425DB6128FD01CD009ACC8D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8425DB4E28FCEB01009ACC8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8425DB5328FCEB01009ACC8D /* ViewController.swift in Sources */,
+				8425DB6028FCFD8A009ACC8D /* NetwokingManager.swift in Sources */,
 				8425DB5128FCEB01009ACC8D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8425DB6128FD01CD009ACC8D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8425DB6228FD01CD009ACC8D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8425DB6128FD01CD009ACC8D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8425DB4528FCEB01009ACC8D /* Project object */;
 }

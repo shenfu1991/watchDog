@@ -11,8 +11,22 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        run()
+    }
+    
+    func run() {
+        let url = "https://ustxz.xuanyuanhuangdi.org/setXModelInfoseq/key/res1/1"
+        NetwokingManager.request(method: .get, URLString: url, parameters: nil) { [weak self] res in
+            guard let self = self else { return }
+//            debugPrint("ss=\(res)")
+        } failure: { error in
+            self.kill(NSButton())
+//            debugPrint("e=\(error)")
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+10, execute: {
+            self.run()
+        })
     }
 
     override var representedObject: Any? {
