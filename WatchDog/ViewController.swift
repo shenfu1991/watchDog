@@ -9,12 +9,19 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var label: NSTextField!
+    var times = 0
+    
+    @IBOutlet weak var ffffflabel: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         run()
     }
     
+    
+    
     func run() {
+        ffffflabel.stringValue = "超时次数：\(times)"
         let url = "https://ustxz.xuanyuanhuangdi.org/setXModelInfoseq/key/res1/1"
         NetwokingManager.request(method: .get, URLString: url, parameters: nil) { [weak self] res in
             guard let self = self else { return }
@@ -22,9 +29,10 @@ class ViewController: NSViewController {
         } failure: { error in
             self.kill(NSButton())
 //            debugPrint("e=\(error)")
+            self.times += 1
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+10, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now()+20, execute: {
             self.run()
         })
     }
@@ -40,7 +48,8 @@ class ViewController: NSViewController {
         let runningApplications = NSWorkspace.shared.runningApplications
         for runningApp in runningApplications {
             let name = runningApp.bundleIdentifier ?? ""
-            if name == "com.apple.Safari" || name == "com.west2online.ClashXPro" {
+//            if name == "com.apple.Safari" || name == "com.west2online.ClashXPro" {
+            if name == "com.west2online.ClashXPro" {
                 _ = runningApp.terminate()
                 _ = runningApp.forceTerminate()
                 DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
