@@ -17,18 +17,16 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         run()
     }
-    
-    
-    
+        
     func run() {
         ffffflabel.stringValue = "超时次数：\(times)"
-        let url = "https://ustxz.xuanyuanhuangdi.org/setXModelInfoseq/key/res1/1"
+        let url = "https://x.xuanyuanhuangdi.org/setXModelInfoseqx/key/res1/1/k"
         NetwokingManager.request(method: .get, URLString: url, parameters: nil) { [weak self] res in
             guard let self = self else { return }
 //            debugPrint("ss=\(res)")
         } failure: { error in
             self.kill(NSButton())
-//            debugPrint("e=\(error)")
+            debugPrint("e=\(error)")
             self.times += 1
         }
         
